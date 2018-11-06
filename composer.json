@@ -18,10 +18,5 @@
         "psr-4": {
             "Inferno\\InfernoElemental\\": "src/"
         }
-    },
-    "extra": {
-        "expose": [
-            "client"
-        ]
     }
 }
