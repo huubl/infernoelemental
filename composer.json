@@ -1,0 +1,27 @@
+{
+    "name": "opticinferno/infernoelemental",
+    "description": "Simple add-on to enable Testimonials",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "silverstripe",
+        "testimonial"
+    ],
+    "authors": [
+        {
+            "name": "Gordon Skinner",
+            "email": "gordon@opticblaze.co.za"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Inferno\\InfernoElemental\\": "src/"
+        }
+    },
+    "extra": {
+        "expose": [
+            "client"
+        ]
+    }
+}
