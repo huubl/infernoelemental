@@ -13,7 +13,8 @@
         }
     ],	"require": {
 		"silverstripe/framework": "^4.1",
-	    "iqnection-modules/simplecolorpickerfield": "dev-master"
+	    "iqnection-modules/simplecolorpickerfield": "dev-master",
+	    "dnadesign/silverstripe-elemental": "dev-master"
 	},
     "minimum-stability": "dev",
 
