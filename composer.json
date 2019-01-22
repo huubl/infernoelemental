@@ -12,7 +12,8 @@
             "email": "gordon@opticblaze.co.za"
         }
     ],	"require": {
-		"silverstripe/framework": "^4.1"
+		"silverstripe/framework": "^4.1",
+	    "iqnection-modules/simplecolorpickerfield": "dev-master"
 	},
     "minimum-stability": "dev",
 
