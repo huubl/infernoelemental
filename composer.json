@@ -4,15 +4,17 @@
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
     "keywords": [
-        "silverstripe",
-        "testimonial"
+        "inferno"
     ],
     "authors": [
         {
             "name": "Gordon Skinner",
             "email": "gordon@opticblaze.co.za"
         }
-    ],
+    ],	"require": {
+		"silverstripe/framework": "^4.1"
+	},
+    "minimum-stability": "dev",
 
     "autoload": {
         "psr-4": {
