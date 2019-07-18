@@ -14,6 +14,8 @@
     ],	"require": {
 		"silverstripe/framework": "^4.1",
 	    "iqnection-modules/simplecolorpickerfield": "dev-master",
+        "opticinferno/infernotestimonial": "*",
+        "opticinferno/infernogallery": "*",
 	    "dnadesign/silverstripe-elemental": "3.*@dev"
 	},
     "minimum-stability": "dev",
