@@ -16,6 +16,8 @@
 	    "iqnection-modules/simplecolorpickerfield": "dev-master",
         "opticinferno/infernotestimonial": "*",
         "opticinferno/infernogallery": "*",
+        "opticinferno/infernoslider": "*",
+        "silverstripe/userforms": "*",
 	    "dnadesign/silverstripe-elemental": "3.*@dev"
 	},
     "minimum-stability": "dev",
