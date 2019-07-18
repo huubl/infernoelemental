@@ -1,6 +1,6 @@
 {
     "name": "opticinferno/infernoelemental",
-    "description": "Simple add-on to enable Testimonials",
+    "description": "Add Additional functionality to Elemental module",
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
     "keywords": [
