@@ -137,25 +137,6 @@ class ElementGalleryExtension extends ElementContentExtension
 	return $fields;
 
 	}
-// public function canEdit($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_EDIT');
-//    }
-//
-//    public function canDelete($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_DELETE');
-//    }
-//
-//    public function canCreate($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_CREATE');
-//    }
-//
-//    public function canPublish($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_PUBLISH');
-//    }
 
 }
 

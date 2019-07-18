@@ -35,7 +35,6 @@ class ElementContentExtension extends BaseElement
 		'RightMargin'=>'Varchar',
 		'LeftMargin'=>'Varchar',
 		'BottomMargin'=>'Varchar',
-		'MarginOptions' => 'Varchar',
 		'BackgroundColor'=>'Color',
 		'TextColor'=>'Color',
 		'BackgroundImagePos'=>'Varchar',
@@ -119,25 +118,6 @@ public function ElementForm()
         }
     }
 
-//	 public function canEdit($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_EDIT');
-//    }
-//
-//    public function canDelete($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_DELETE');
-//    }
-//
-//    public function canCreate($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_CREATE');
-//    }
-//
-//    public function canPublish($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_PUBLISH');
-//    }
 
 }
 

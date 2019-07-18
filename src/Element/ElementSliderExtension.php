@@ -60,26 +60,4 @@ class ElementSliderExtension extends ElementContentExtension
 
 	}
 
-	// Makes banner recursive so that it display in all child fields
-
-
-//	 public function canEdit($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_EDIT');
-//    }
-//
-//    public function canDelete($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_DELETE');
-//    }
-//
-//    public function canCreate($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_CREATE');
-//    }
-//
-//    public function canPublish($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_PUBLISH');
-//    }
 }

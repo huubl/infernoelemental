@@ -16,11 +16,10 @@ use TractorCow\Colorpicker\Forms\ColorField;
  */
 class ElementTestimonialExtension extends ElementContentExtension
 {
-	 private static $title = "Custom Testimonial Block";
+	private static $title = "Custom Testimonial Block";
     private static $table_name = 'ElementTestimonialExtension';
     private static $description = "A block with testimonials";
     private static $singular_name = 'Testimonial block';
-
     private static $plural_name = 'Testimonial blocks';
 
 
@@ -40,18 +39,13 @@ class ElementTestimonialExtension extends ElementContentExtension
 		'RightMargin'=>'Varchar',
 		'LeftMargin'=>'Varchar',
 		'BottomMargin'=>'Varchar',
-		'MarginOptions' => 'Varchar',
 		'BackgroundColor'=>'Color',
 		'TextColor'=>'Color',
 		'ArrowColor'=>'Color',
 		'ArrowSize'=>'Varchar'
-
-
 		);
-    public function getType()
-    {
-        return _t(__CLASS__ . '.BlockType', 'Testimonial Block');
-    }
+
+    public function getType(){return _t(__CLASS__ . '.BlockType', 'Testimonial Block');}
 		 public function getCMSFields()
     {
 		 $fields = parent::getCMSFields();
@@ -88,28 +82,10 @@ class ElementTestimonialExtension extends ElementContentExtension
 
 			 return $fields;
 		 }
+		 // Fetch Testimonials
 	public function Testimonials(){
 		$Testimonials = Testimonials::get();
 		return $Testimonials;
 
 	}
-//	 public function canEdit($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_EDIT');
-//    }
-//
-//    public function canDelete($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_DELETE');
-//    }
-//
-//    public function canCreate($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_CREATE');
-//    }
-//
-//    public function canPublish($member = null)
-//    {
-//        return Permission::check('ADMIN') || Permission::check('BLOCK_PUBLISH');
-//    }
 }
