@@ -15,7 +15,6 @@
 		"silverstripe/framework": "^4.1",
 	    "iqnection-modules/simplecolorpickerfield": "dev-master",
         "opticinferno/infernotestimonial": "*",
-        "opticinferno/infernogallery": "*",
         "opticinferno/infernoslider": "*",
         "silverstripe/userforms": "*",
 	    "dnadesign/silverstripe-elemental": "3.*@dev"
@@ -26,5 +25,10 @@
         "psr-4": {
             "Inferno\\InfernoElemental\\": "src/"
         }
+    },
+    "extra": {
+        "expose": [
+            "client"
+        ]
     }
 }
