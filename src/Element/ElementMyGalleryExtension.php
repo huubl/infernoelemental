@@ -28,10 +28,11 @@ class ElementMyGalleryExtension extends BaseElement {
     // One gallery page has many gallery images
 
     private static $has_many = array(
-
         'MyGalleryImages' => MyGalleryImage::class
-
     );
+    private static $owns = [
+        'MyGalleryImages'
+    ];
 
     // Add CMS description
 

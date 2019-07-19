@@ -43,18 +43,15 @@ class ElementContentExtension extends BaseElement
 		'FormText' => 'Varchar',
 		'HTML' => 'HTMLText',
 		'RowBackground' => 'Varchar',
-		/*'DisplayTestimonials'=>'Varchar',*/
 	);
     private static $has_one = array(
 	    'BackgroundImage' => Image::class,
         'Form' => UserDefinedForm::class
-
-
 	);
-    public function getType()
-    {
-        return _t(__CLASS__ . '.BlockType', 'Custom Content');
-    }
+    private static $owns = [
+        'BackgroundImage'
+    ];
+    public function getType(){return _t(__CLASS__ . '.BlockType', 'Custom Content');}
     private static $has_many = array(//'Gallery'=>'Gallery'
 );
 	 public function getCMSFields()

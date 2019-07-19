@@ -31,7 +31,6 @@ class ElementSliderExtension extends ElementContentExtension
 	'Interval'=>'Varchar(10)',
 	'Swipe'=>'Varchar(10)',
 	'IconColor' => 'Color',
-
 	);
 
     private static $has_one = array();
@@ -39,10 +38,7 @@ class ElementSliderExtension extends ElementContentExtension
     private static $has_many = array(
 	'Banners'=>RotatingBanners::class
 	);
-    public function getType()
-    {
-        return _t(__CLASS__ . '.BlockType', 'Slider block');
-    }
+    public function getType(){return _t(__CLASS__ . '.BlockType', 'Slider block');}
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();

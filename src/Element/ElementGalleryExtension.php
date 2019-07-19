@@ -42,6 +42,9 @@ class ElementGalleryExtension extends ElementContentExtension
 	private static $has_many = array(
     'GalleryImages' => GalleryImage::class
   	);
+	private static $owns = [
+	    'GalleryImages'
+    ];
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Gallery block');

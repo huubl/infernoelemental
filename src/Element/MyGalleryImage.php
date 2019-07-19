@@ -22,6 +22,7 @@ class MyGalleryImage extends DataObject {
         'Image' => Image::class,
         'ElementMyGalleryExtension' => ElementMyGalleryExtension::class,
     );
+    private static $owns = ['Image'];
 
     // Add fields to dataobject
     public function getCMSFields() {
