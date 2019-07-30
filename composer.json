@@ -13,7 +13,6 @@
         }
     ],	"require": {
 		"silverstripe/framework": "^4.1",
-	    "iqnection-modules/simplecolorpickerfield": "*",
         "opticinferno/infernotestimonial": "*",
         "opticinferno/infernoslider": "*",
         "silverstripe/userforms": "*",
