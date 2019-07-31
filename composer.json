@@ -16,7 +16,7 @@
         "opticinferno/infernotestimonial": "*",
         "opticinferno/infernoslider": "*",
         "silverstripe/userforms": "*",
-	    "dnadesign/silverstripe-elemental": "3.*@dev"
+	    "dnadesign/silverstripe-elemental": "*"
 	},
     "minimum-stability": "dev",
 
