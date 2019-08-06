@@ -20,6 +20,7 @@ class ElementContentExtension extends BaseElement
 {
     private static $title = "Custom Content Block";
     private static $table_name = 'ElementContentExtension';
+    private static $inline_editable = false;
 
     private static $description = "Block of text with heading, blockquote, list and paragraph styles";
 	private static $db = array(

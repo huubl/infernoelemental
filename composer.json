@@ -3,7 +3,8 @@
     "description": "Add Additional functionality to Elemental module",
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
-    "keywords": ["opticinferno"
+    "keywords": [
+        "inferno"
     ],
     "authors": [
         {

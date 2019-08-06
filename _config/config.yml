@@ -4,3 +4,8 @@ Name: elementalConfig
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
+  allowed_elements:
+    - Inferno\InfernoElemental\Element\ElementContentExtension
+    - Inferno\InfernoElemental\Element\ElementMyGalleryExtension
+    - Inferno\InfernoElemental\Element\ElementSliderExtension
+    - Inferno\InfernoElemental\Element\ElementTestimonialExtension

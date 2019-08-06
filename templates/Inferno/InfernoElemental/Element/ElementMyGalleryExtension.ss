@@ -19,7 +19,7 @@
     <% end_if %>
         ">
     <div class="$RowBackground">
-<% include  InfernoGallery/Gallery/Gallery %>
+<% include  InfernoGallery/Gallery/GalleryImages %>
 
     </div>
 </div>
