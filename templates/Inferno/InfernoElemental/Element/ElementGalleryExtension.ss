@@ -24,7 +24,7 @@ margin-left:$LeftMargin\px !important;
 
 	<h2 class="header-style-1" style="text-align:center;text-transform: uppercase">$Title</h2>
 
-        <% include InfernoGallery/Gallery/Gallery %>
+        <% include InfernoGallery/Gallery/GalleryImages %>
 
 	</div>
 </div>

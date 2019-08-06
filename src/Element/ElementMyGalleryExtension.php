@@ -5,6 +5,7 @@ namespace Inferno\InfernoElemental\Element;
 use Colymba\BulkManager\BulkManager;
 use Colymba\BulkUpload\BulkUploader;
 use DNADesign\Elemental\Models\BaseElement;
+use Inferno\InfernoGallery\Gallery\GalleryImage;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
@@ -28,7 +29,7 @@ class ElementMyGalleryExtension extends BaseElement {
     // One gallery page has many gallery images
 
     private static $has_many = array(
-        'MyGalleryImages' => MyGalleryImage::class
+        'MyGalleryImages' => GalleryImage::class
     );
     private static $owns = [
         'MyGalleryImages'
@@ -53,11 +54,13 @@ class ElementMyGalleryExtension extends BaseElement {
 
         $fields = parent::getCMSFields();
 
-        $widthHeight = [ 160 => '6', '133' => '7', '114' => '8', '99' => '9', '87' => '10'];
+        $widthHeight = [ '160' => '6', '133' => '7', '114' => '8', '99' => '9', '87' => '10'];
 
-        $fields = new FieldList(
 
-            DropdownField::create('WidthHeight', 'How many images in row',$widthHeight),
+
+            $fields->addFieldToTab('Root.Main',DropdownField::create('WidthHeight', 'How many images in row',
+                $widthHeight));
+            $fields->addFieldToTab('Root.Main',
             GridField::create(
                 'MyGalleryImages',
                 'Gallery Images',
