@@ -16,6 +16,7 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Security\Permission;
 use SilverStripe\View\Requirements;
 use SilverStripe\Security\PermissionProvider;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
 class ElementMyGalleryExtension extends ElementContentExtension {
@@ -66,7 +67,7 @@ class ElementMyGalleryExtension extends ElementContentExtension {
         $gridFieldConfig->addComponent(new \Colymba\BulkManager\BulkManager());
         $gridFieldConfig->removeComponentsByType('GridFieldPaginator'); // Remove default paginator
         $gridFieldConfig->addComponent(new GridFieldPaginator(50)); // Add custom paginator
-        $gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
+        $gridFieldConfig->addComponent(new GridFieldOrderableRows('SortOrder'));
         $gridFieldConfig->removeComponentsByType('GridFieldAddNewButton'); // We only use bulk upload button
 
         $gridField = new GridField("GalleryImage", "Gallery Images", $this->owner->GalleryImage()->sort("SortOrder"), $gridFieldConfig);
