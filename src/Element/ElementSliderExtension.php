@@ -13,6 +13,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\UserForms\Form\UserForm;
 use SilverStripe\UserForms\Model\UserDefinedForm;
 use TractorCow\Colorpicker\Forms\ColorField;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
 /**
@@ -47,7 +48,7 @@ class ElementSliderExtension extends ElementContentExtension
 
 		$fields->addFieldToTab("Root.Settings", new ColorField('IconColor', 'Icon colors'));
 		$gridFieldConfig= GridFieldConfig_RelationEditor::create(10);
-		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
+		$gridFieldConfig->addComponent(new GridFieldOrderableRows('SortOrder'));
 
 		$GridField = new GridField("Banners", "Recursive Rotating Banners", $this->owner->Banners()->sort("SortOrder"), $gridFieldConfig);
 	$fields->addFieldToTab("Root.Main", $GridField);

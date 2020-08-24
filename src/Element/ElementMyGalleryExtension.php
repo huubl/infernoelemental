@@ -5,20 +5,26 @@ namespace Inferno\InfernoElemental\Element;
 use Colymba\BulkManager\BulkManager;
 use Colymba\BulkUpload\BulkUploader;
 use DNADesign\Elemental\Models\BaseElement;
+use Inferno\InfernoGallery\Gallery\GalleryImage;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridFieldPaginator;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Security\Permission;
 use SilverStripe\View\Requirements;
 use SilverStripe\Security\PermissionProvider;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
-class ElementMyGalleryExtension extends BaseElement {
+class ElementMyGalleryExtension extends ElementContentExtension {
 
     private static $db = array(
-        'WidthHeight' => 'Varchar'
+        'WidthHeight' => 'Varchar',
+        'ImageHeight' => 'Int',
+        'ImageWidth' => 'Int'
     );
 
     private static $has_one = array(
@@ -28,10 +34,10 @@ class ElementMyGalleryExtension extends BaseElement {
     // One gallery page has many gallery images
 
     private static $has_many = array(
-        'MyGalleryImages' => MyGalleryImage::class
+        'GalleryImage' => GalleryImage::class
     );
     private static $owns = [
-        'MyGalleryImages'
+        'GalleryImage'
     ];
 
     // Add CMS description
@@ -53,17 +59,20 @@ class ElementMyGalleryExtension extends BaseElement {
 
         $fields = parent::getCMSFields();
 
-        $widthHeight = [ 160 => '6', '133' => '7', '114' => '8', '99' => '9', '87' => '10'];
+        $fields->addFieldToTab('Root.ImageGallery', TextField::create('ImageHeight', 'Height for images'));
+        $fields->addFieldToTab('Root.ImageGallery', TextField::create('ImageWidth', 'Width for images'));
+        // Customise gridfield
+        $gridFieldConfig = GridFieldConfig_RecordEditor::create();
+        $gridFieldConfig->addComponent(new \Colymba\BulkUpload\BulkUploader());
+        $gridFieldConfig->addComponent(new \Colymba\BulkManager\BulkManager());
+        $gridFieldConfig->removeComponentsByType('GridFieldPaginator'); // Remove default paginator
+        $gridFieldConfig->addComponent(new GridFieldPaginator(50)); // Add custom paginator
+        $gridFieldConfig->addComponent(new GridFieldOrderableRows('SortOrder'));
+        $gridFieldConfig->removeComponentsByType('GridFieldAddNewButton'); // We only use bulk upload button
 
-        $fields = new FieldList(
+        $gridField = new GridField("GalleryImage", "Gallery Images", $this->owner->GalleryImage()->sort("SortOrder"), $gridFieldConfig);
+        $fields->addFieldToTab("Root.ImageGallery", $gridField);
 
-            DropdownField::create('WidthHeight', 'How many images in row',$widthHeight),
-            GridField::create(
-                'MyGalleryImages',
-                'Gallery Images',
-                $this->MyGalleryImages(),
-                GridFieldConfig_RecordEditor::create()
-            ));
 
         return $fields;
 

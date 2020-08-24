@@ -12,12 +12,13 @@
             "email": "gordon@opticblaze.co.za"
         }
     ],	"require": {
-		"silverstripe/framework": "^4.1",
-	    "iqnection-modules/simplecolorpickerfield": "dev-master",
+		"silverstripe/framework": "^4.4",
         "opticinferno/infernotestimonial": "*",
+        "opticinferno/infernogallery": "*",
+        "dnadesign/silverstripe-elemental-virtual": "*",
         "opticinferno/infernoslider": "*",
         "silverstripe/userforms": "*",
-	    "dnadesign/silverstripe-elemental": "3.*@dev"
+	    "dnadesign/silverstripe-elemental": "*"
 	},
     "minimum-stability": "dev",
 

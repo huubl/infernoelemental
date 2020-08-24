@@ -1,64 +1,25 @@
-<head>
-<style>
-    .gal-style{
-        margin: 5px;
-        border: 5px white solid;
-        border-radius: 15px;
-        box-shadow: 0px 4px 14px -7px #000000;
+<div class="element_content__content <% if Style %>element_content__$CssStyle<% end_if %>"  style="background-image: url($BackgroundImage.URL);background-position: $BackgroundImagePos;background-color: #$BackgroundColor;background-size: $BackgroundSize;color:#$TextColor;
 
-        -moz-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-    .gal-style:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
+    <% if $PaddingOptions == 0 %>
+        <% if $Padding == "" %>padding: 20px !important; <% else %>padding-top:$Padding\px !important;padding-bottom:$Padding\px !important; <% end_if %><% end_if %>
+    <% if $PaddingOptions == 1 %>
+    padding-top:$TopPadding\px !important;
+            padding-right:$RightPadding\px !important;
+            padding-bottom:$BottomPadding\px !important;
+            padding-left:$LeftPadding\px !important;
+    <% end_if %>
 
-</style>
-</head>
-<div class="container">
+    <% if $MarginOptions == 0 %>margin:$Margin\px !important;
+    <% end_if %>
+    <% if $MarginOptions == 1 %>
+    margin-top:$TopMargin\px !important;
+            margin-right:$RightMargin\px !important;
+            margin-bottom:$BottomMargin\px !important;
+            margin-left:$LeftMargin\px !important;
+    <% end_if %>
+        ">
+    <div class="$RowBackground">
+<% include  InfernoGallery/Gallery/GalleryImages %>
 
-
-    <div class="d-none d-lg-block">
-        <div id="lightgallery" class="row">
-            <% loop $MyGalleryImages %>
-
-                <a  href="$Image.URL" data-sub-html="$Description">
-
-                        <img class="gal-style" src="$Image.Fill($Up.WidthHeight,$Up.WidthHeight).URL" alt="$Tilte"/>
-
-                </a>
-
-            <% end_loop %>
-        </div>
     </div>
-
-
-
-    <div class="d-block d-lg-none">
-        <div id="lightgallery2" class="row">
-            <% loop $MyGalleryImages %>
-
-                <div class="col-md-4 col-6" href="$Image.URL" data-sub-html="$Description">
-                    <img class="gal-style" src="$Image.Fill(250,250).URL" alt="$Tilte"/>
-                </div>
-            <% end_loop %>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#lightgallery").lightGallery();
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#lightgallery2").lightGallery();
-        });
-    </script>
-
-    <%--<script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>--%>
 </div>
